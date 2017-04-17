@@ -26,7 +26,7 @@ export default class ProductList extends Component{
                 {
                     this.props.proData.map((item,index)=>(
                     <li key={index}>
-                        <Link to="">
+                        <Link to="/commmodityDetails">
                             <div className="product_img">
                                 <img  src={item.proimg} />
                             </div>

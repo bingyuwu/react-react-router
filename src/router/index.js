@@ -15,11 +15,17 @@ const Category=(location,cb)=>{
        cb(null,require('../views/category').default)
    },'Category')
 }
+const CommodityDetail=(location,cb)=>{
+   require.ensure([],(require)=>{
+       cb(null,require('../views/commodityDetails').default)
+   },'CommodityDetail')
+}
 export default(
     <Router history={browserHistory}>
         <Route path="/" component={Roots} >
           <IndexRoute  component={Index}/>
           <Route path="category" getComponent={Category}/>
+          <Route path="commmodityDetails" getComponent={CommodityDetail}/>
         </Route>
 
     </Router>
