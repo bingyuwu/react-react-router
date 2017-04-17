@@ -1,0 +1,16 @@
+@mixin flex-box{
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+
+
+@mixin flex($flex:1){
+  flex:$flex;
+  -webkit-flex: $flex;
+  -webkit-box-flex: $flex;
+  -moz-box-flex:$flex;
+  -ms-flex: $flex;
+}

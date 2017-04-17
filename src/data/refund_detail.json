@@ -1,0 +1,26 @@
+{
+  "msg": "退款详情--数据",
+  "success": true,
+  "total": 1,
+  "data": [
+    {
+        "ware_id":1225,//退款商品Id
+        "ware_orderItemId":739922,//退款Id
+        "refund_status":{
+            "refund_status_code":0,//退款中状态
+            "refund_title":"等待商家处理退款详情",
+            "remain_day":"01",//天
+            "remain_time":"23"//时
+        },
+        "refund_detail":{//内容详情
+            "store_name":"花梓伊",
+            "refund_type":"仅退款",
+            "refund_amount":999.00,
+            "refund_reason":"拍错了/订单信息有误",
+            "refund_desc":"衣服样式有误",
+            "refund_number":"123456789000",//退款单号
+            "refund_date":"2016-10-01 12:00:00"
+        }
+    }
+  ]
+}
