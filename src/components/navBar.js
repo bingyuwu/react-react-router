@@ -7,21 +7,20 @@ export default class  NavBar extends Component{
             linkData:[
                 {name:"首页",path:"/"},
                 {name:"分类",path:"/category"},
-                {name:"购物车",path:"/"},
-                {name:"个人中心",path:"/"}
+                {name:"购物车",path:"/shopCart"},
+                {name:"个人中心",path:"/userCenter"}
             ]
         }
     }
     render(){
         const List=this.state.linkData.map((item,index)=>(
             <div key={index}>
-                <Link to={item.path}>
+                <Link to={item.path} activeClassName="active" onlyActiveOnIndex>
                     <span></span>
                     <p>{item.name}</p>
                 </Link>
             </div>
         ))
-
         return(
             <nav className="nav">
                 {List}

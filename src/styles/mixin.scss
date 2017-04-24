@@ -6,11 +6,36 @@
   display: -webkit-flex;
 }
 
-
 @mixin flex($flex:1){
   flex:$flex;
   -webkit-flex: $flex;
   -webkit-box-flex: $flex;
   -moz-box-flex:$flex;
   -ms-flex: $flex;
+}
+
+/**单行溢出*/
+@mixin single(){
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/*多行溢出*/
+@mixin multi($clamp:2){
+  display: -webkit-box;
+  -webkit-line-clamp:$clamp;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+//dispaly-inline-block
+@mixin display-inline(){
+  display: inline-block;
+  vertical-align: middle;
+}
+/*高和行高*/
+@mixin line-height($h:0.8,$lh:0.8){
+  height:#{$h}rem;
+  line-height: #{$lh}rem;
 }

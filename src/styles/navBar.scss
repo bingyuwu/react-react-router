@@ -27,7 +27,23 @@ $nav-prefix:nav;
             background:url('../images/nav_icon#{$i}.png') center center no-repeat ;
             background-size:100% 100%;
         }
+        a.active{
+            color:#ff3389;
+           span{
+            display:block;
+            width:0.45rem;
+            height:0.45rem;
+            margin:0 auto;
+            background:url('../images/nav_icon#{$i}_active.png') center center no-repeat ;
+            background-size:100% 100%;
+           }
+        }
+
       }
+
    }
+
   }
+
+
 }

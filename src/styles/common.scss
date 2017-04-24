@@ -138,8 +138,10 @@ header.header{
  left: 0;
  right:0;
  top:0;
-  z-index: 99;
+ z-index: 99;
  border-bottom:1px solid #eee;
+// position: relative;
+
   background: #fff;
     input{
         border: 1px solid #ccc;
@@ -154,12 +156,30 @@ header.header{
       text-align: center;
      font-size: 0.28rem;
    }
+   .back{
+     position: absolute;
+     left: 0.24rem;
+    display: block;
+    width: 0.5rem;
+    height: 0.88rem;
+    background: url("../images/sd_back.png") no-repeat left center;
+    background-size: 0.21rem 0.38rem;
+   }
+}
+
+.bar-second-footer{
+  position: fixed;
+  left:0;
+  right:0;
+  bottom:0.88rem;
 }
 
 .carousel{
   padding-top:0.88rem;
 }
-  .square_category{
+
+
+.square_category{
     width: 100%;
     height: auto;
     margin: 0.1rem 0;
@@ -179,7 +199,6 @@ header.header{
       }
     }
   }
-
 
 .product_list {
   margin-right: -0.12rem;
@@ -222,24 +241,24 @@ header.header{
         &.price{
           font-size: 0.32rem;
           color: #ff003c;
-
         }
-
-
       }
     }
   }
 }
 
 
-.padingBottom{
-  padding-bottom: 0.88rem;
+.marginBottom{
+  margin-bottom: 0.88rem;
 }
 
-.paddingTop{
-  padding-top: 0.88rem;
+.marginTop{
+  margin-top: 0.88rem;
 }
 
+.marginBottomSecond{
+  margin-bottom: 1.96rem;
+}
 /*分类页*/
 .categoryContent{
   .dt{

@@ -1,7 +1,10 @@
 import React,{Component} from 'react'
-export default class Category extends Component{
-    constructor(){
-        super();
+import NavBar from 'components/navBar'
+import { connect } from 'react-redux'
+import *as action from '../redux/action';
+ class Category extends Component{
+    constructor(props){
+        super(props);
         this.state={
             active:false,
             csData:[
@@ -50,10 +53,28 @@ export default class Category extends Component{
                 <header className="header">
                     <h1>分类</h1>
                 </header>
-                <div className="categoryContent paddingTop padingBottom">
-                {list }
-                </div>
+                 <NavBar></NavBar>
+                 <div className="clear marginTop marginBottom">
+                      <div className="categoryContent">
+                        {list }
+                      </div>
+                 </div>
+              
             </div>
             )
     }
 }
+function mapDispatchToProps(dispatch) {
+  return {
+    testAction: () => dispatch(testAction())
+  };
+}
+function mapStateToProps(state) {
+    return{
+          testData:state.getData
+      }
+}
+export default connect(
+    mapStateToProps
+)(Category)
+//export default Category;

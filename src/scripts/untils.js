@@ -1,18 +1,18 @@
 export const paging=(dom,callback,update)=>{
     let height = 0;
-    let windowHeight = window.screen.height;
+    let windowHeight = document.documentElement.clientHeight || document.body.clientHeight ; //可视区内容
     let setTop = 0;
     let Bottom = 0;
     let oldScrollTop = 0;
-    let timer = null;
     let shuldUpdate=update;
 
   //  let pageHeight = Math.max(document.body.scrollHeight,document.body.offsetHeight)//真是内容的高度
     dom.addEventListener('touchstart',() => {
         height = dom.offsetHeight;//盒子的高度
         setTop = dom.offsetTop;//距离顶部的高度
-      //  Bottom = parseInt(Tool.getStyle(dom,'marginBottom'));
+    
     },false)
+
     dom.addEventListener('touchmove',() => {
         loadMore();
 
@@ -37,6 +37,7 @@ export const paging=(dom,callback,update)=>{
 
 
     const loadMore = () => {
+       // srollTop//滚动条滚动的距离
             if(shuldUpdate==true){
                 if (document.body.scrollTop+windowHeight >= height+setTop) {
                     cancelAnimationFrame(requestID)
@@ -53,12 +54,19 @@ export const paging=(dom,callback,update)=>{
 
 const lowEnough=()=>{
     var pageHeight = Math.max(document.body.scrollHeight,document.body.offsetHeight)//真是内容的高度
-
     var viewportHeight = document.documentElement.clientHeight || document.body.clientHeight ; //可视区内容
-
     var scrollHeight = document.documentElement.scrollTop || document.body.scrollTop //滚动条滚动的距离
-    // console.log(pageHeight);
-    // console.log(viewportHeight);
-    // console.log(scrollHeight);
     return pageHeight - viewportHeight - scrollHeight < 20;
 }
+
+
+export const toParams=(obj)=>{
+    let arr=[],str='?';
+    for(let i in obj){
+        arr.push(i+"="+obj[i])
+    }
+    
+    return str+=arr.join("&");
+}
+
+ 
